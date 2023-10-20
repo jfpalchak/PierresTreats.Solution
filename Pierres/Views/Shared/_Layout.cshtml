@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    @RenderBody()
+    @await Html.PartialAsync("NavBar")
+    <div class="container">
+      @RenderBody()
+    </div>
   </body>
 </html>
