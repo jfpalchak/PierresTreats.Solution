@@ -6,6 +6,7 @@ a {
 /* HEADER/NAV*/
 
 .brand {
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -15,6 +16,7 @@ a {
 
 .navbar a, .nav-account a{
   font-weight: bold;
+  font-size: large;
   margin-top: 10px;
   color: #590A29;
   padding-left: 10px;
