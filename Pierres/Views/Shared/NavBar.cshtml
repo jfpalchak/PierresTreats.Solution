@@ -1,8 +1,16 @@
-<nav>
-  <h1>Pierre's</h1>
-  @Html.ActionLink("Home", "Index", "Home") |
-  @Html.ActionLink("Treats", "Index", "Treats") |
-  @Html.ActionLink("Flavors", "Index", "Flavors") |
-  @Html.ActionLink((User.Identity.IsAuthenticated ? User.Identity.Name : "Account"), "Index", "Account")
-</nav>
+<div class="d-flex justify-content-center container">
+  <nav>
+    <div class="col logo">
+      <a asp-action="Index" asp-controller="Home">
+        <img src="~/img/logo.png" class="logo">
+      </a>
+    </div>
+    <div class="navbar">
+      @Html.ActionLink("Home", "Index", "Home") |
+      @Html.ActionLink("Treats", "Index", "Treats") |
+      @Html.ActionLink("Flavors", "Index", "Flavors") |
+      @Html.ActionLink((User.Identity.IsAuthenticated ? User.Identity.Name : "Account"), "Index", "Account")
+    </div>
+  </nav>
+</div>
 <hr/>
