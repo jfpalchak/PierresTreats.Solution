@@ -1,19 +1,22 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Pierres.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Pierres.Controllers
 {
-  public class HomeController : Controller
+  public class TreatsController : Controller
   {
     private readonly PierresContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public HomeController(UserManager<ApplicationUser> userManager, PierresContext db)
+    public TreatsController(UserManager<ApplicationUser> userManager, PierresContext db)
     {
       _db = db;
       _userManager = userManager;
