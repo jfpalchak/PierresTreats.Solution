@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Pierres.Models.Treat;
+
+<h4>Add New Treat</h4>
+
+<br/>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(m => m.Type)
+  <br/>
+  @Html.TextBoxFor(m => m.Type)
+  <br/>
+  <br/>
+  <input type="submit" value="Add" class="btn btn-primary" />
+}

@@ -1,0 +1,37 @@
+@{
+  Layout = "_Layout";
+}
+
+@using System.Collections.Generic;
+@using Pierres.Models;
+@model Pierres.Models.Treat;
+
+<h4>Treat Details</h4>
+
+<br/>
+
+<div class="card">
+  <div class="card-header">
+    <h5>@Model.Type</h5>
+    @Html.ActionLink("Add a Flavor", "AddFlavor")
+    <br/>
+    <small>@Html.ActionLink("Edit Treat", "Edit")</small> |
+    <small>@Html.ActionLink("Remove Treat", "Delete")</small>
+  </div>
+  <div class="card-body">
+    @if(@Model.JoinEntities.Count == 0)
+    {
+      <p>This treat is void of any flavors.</p>
+    }
+    else
+    {
+      <h6>Flavors:</h6>
+      <ul>
+        @foreach(TreatFlavor join in Model.JoinEntities)
+        {
+          <li>@Html.ActionLink(join.Flavor.Type, "Details", new { id = join.Flavor.FlavorId })</li>
+        }
+      </ul>
+    }
+  </div>
+</div>
