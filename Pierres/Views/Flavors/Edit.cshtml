@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Pierres.Models;
+@model Pierres.Models.Flavor;
+
+<h4>Edit Flavor > @Model.Type</h4>
+
+<br/>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(m => m.FlavorId)
+
+  @Html.LabelFor(m => m.Type)
+  <br/>
+  @Html.TextBoxFor(m => m.Type)
+  <br/>
+  @Html.ValidationMessageFor(m => m.Type, "", new { @class = "text-danger" })
+  <br/>
+  <input type="submit" value="Save" class="btn btn-primary" />
+  @Html.ActionLink("Cancel", "Details", new { id = @Model.FlavorId })
+}

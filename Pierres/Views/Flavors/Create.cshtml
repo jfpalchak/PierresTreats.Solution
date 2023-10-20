@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Pierres.Models.Flavor;
+
+<h4>Add New Flavor</h4>
+
+<br/>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(m => m.Type)
+  <br/>
+  @Html.TextBoxFor(m => m.Type)
+  <br/>
+  @Html.ValidationMessageFor(m => m.Type, "", new { @class = "text-danger" })
+  <br/>
+  <input type="submit" value="Add" class="btn btn-primary" />
+}

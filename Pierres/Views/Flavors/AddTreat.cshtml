@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Pierres.Models.Flavor;
+
+<h4>Add a Treat</h4>
+
+<br/>
+
+@if(ViewBag.IsNoTreats)
+{
+  <p>There are currently no treats available.</p>
+  <p>Please @Html.ActionLink("Create a Treat", "Create", "Treats") first.</p>
+}
+else
+{
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(m => m.FlavorId)
+
+    @Html.Label("Select a Treat")
+    <br/>
+    @Html.DropDownList("TreatId")
+    <br/>
+    <br/>
+    <input type="submit" value="Add" class="btn btn-primary" />
+    @Html.ActionLink("Cancel", "Details", new { id = @Model.FlavorId })
+  }
+}
