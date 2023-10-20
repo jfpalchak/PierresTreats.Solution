@@ -4,16 +4,29 @@
 
 <h4>Account Management</h4>
 
-@if (User.Identity.IsAuthenticated)
-{
-  <p>Hello, @User.Identity.Name!</p>
-  @using (Html.BeginForm("LogOff", "Account"))
-  {
-    <input type="submit" value="Log Off" class="btn btn-primary" />
-  }
-}
-else
-{
-  <h5>@Html.ActionLink("Log In", "Login")</h5>
-  <h5>@Html.ActionLink("Register", "Register")</h5>
-}
+<div class="container col-5">
+  <div class="card">
+    <div class="card-header">
+      <h5>Welcome!</h5>
+    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+      <div class="card-body">
+        <p>Hello, @User.Identity.Name!</p>
+      </div>
+      <div class="card-footer">
+        @using (Html.BeginForm("LogOff", "Account"))
+        {
+          <input type="submit" value="Log Off" class="btn btn-primary" />
+        }
+      </div>
+    }
+    else
+    {
+      <div class="card-body">
+        <h5>@Html.ActionLink("Log In", "Login")</h5>
+        <h5>@Html.ActionLink("Register", "Register")</h5>
+      </div>
+    }
+  </div>
+</div>

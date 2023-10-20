@@ -5,25 +5,44 @@
 @using Pierres.ViewModels;
 @model RegisterViewModel;
 
-<h4>Register New User</h4>
+<h4>Account Management</h4>
 
-@if(!ViewData.ModelState.IsValid)
-{
-  @Html.ValidationSummary("Please fix the following error(s) and resubmit:")
-}
-
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(user => user.Email)
-  @Html.TextBoxFor(user => user.Email)
-  <br/>
-  @Html.LabelFor(user => user.Password)
-  @Html.EditorFor(user => user.Password)
-  <br/>
-  @Html.LabelFor(user => user.ConfirmPassword)
-  @Html.EditorFor(user => user.ConfirmPassword)
-  <br/>
-  <input type="submit" value="Register" class="btn btn-primary" />
-}
-
-@Html.ActionLink("Back", "Index")
+<div class="container col-6">
+  @using (Html.BeginForm())
+  {
+  <div class="card">
+    <div class="card-header">
+      <h5>Register New User</h5>
+    </div>
+    <div class="card-body row">
+      <div class="col">
+        <h5>Enter account details:</h5>
+        <br/>
+        @Html.LabelFor(user => user.Email)
+        <br/>
+        @Html.TextBoxFor(user => user.Email)
+        <br/>
+        @Html.LabelFor(user => user.Password)
+        <br/>
+        @Html.EditorFor(user => user.Password)
+        <br/>
+        @Html.LabelFor(user => user.ConfirmPassword)
+        <br/>
+        @Html.EditorFor(user => user.ConfirmPassword)
+        <br/>
+        <br/>
+      </div>
+      <div class="col">
+        @if(!ViewData.ModelState.IsValid)
+        {
+          @Html.ValidationSummary("Please fix the following error(s):", new { @class = "text-danger" })
+        }
+      </div>
+    </div>
+    <div class="card-footer">
+      <input type="submit" value="Register" class="btn btn-primary" />
+      &nbsp;&nbsp;@Html.ActionLink("Back", "Index")
+    </div>
+  </div>
+  }
+</div>
