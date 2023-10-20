@@ -5,20 +5,32 @@
 @using Pierres.Models;
 @model Pierres.Models.Treat;
 
-<h4>Edit Treat > @Model.Type</h4>
+<h4>Pierre's Treats > Edit</h4>
 
 <br/>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(m => m.TreatId)
+<div class="container col-8">
+  @using (Html.BeginForm())
+  {
+    <div class="card">
+      <div class="card-header">
+        <h4>@Model.Type</h4>
+        <h6>Edit Treat</h6>
+      </div>
+      <div class="card-body">
+        @Html.HiddenFor(m => m.TreatId)
 
-  @Html.LabelFor(m => m.Type)
-  <br/>
-  @Html.EditorFor(m => m.Type)
-  <br/>
-  @Html.ValidationMessageFor(m => m.Type, "", new { @class = "text-danger" })
-  <br/>
-  <input type="submit" value="Save" class="btn btn-primary" />
-  @Html.ActionLink("Cancel", "Details", new { id = @Model.TreatId })
-}
+        @Html.LabelFor(m => m.Type)
+        <br/>
+        @Html.EditorFor(m => m.Type)
+        <br/>
+        @Html.ValidationMessageFor(m => m.Type, "", new { @class = "text-danger" })
+        <br/>
+      </div>
+      <div class="card-footer">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        &nbsp;&nbsp;@Html.ActionLink("Cancel", "Details", new { id = @Model.TreatId })
+      </div>
+    </div>
+  }
+</div>

@@ -6,31 +6,33 @@
 @using Pierres.Models;
 @model List<Pierres.Models.Flavor>;
 
-<h4>Available Flavors</h4>
+<h4>Pierre's Flavors</h4>
 
 <br/>
 
-<div class="card">
-  <div class="card-header">
-    <h5>Flavors</h5>
-    @if(User.Identity.IsAuthenticated)
-    {
-      @Html.ActionLink("Add New Flavor", "Create")
-    }
-  </div>
-  <div class="card-body">
-    @if(Model.Count == 0)
-    {
-      <p>There are currently no flavors available.</p>
-    }
-    else
-    {
-      <ul>
-        @foreach(Flavor flavor in Model)
-        {
-          <li>@Html.ActionLink(flavor.Type, "Details", new { id = flavor.FlavorId })</li>
-        }
-      </ul>
-    }
+<div class="container col-8">
+  <div class="card">
+    <div class="card-header">
+      <h5>Flavors</h5>
+      @if(User.Identity.IsAuthenticated)
+      {
+        @Html.ActionLink("Add New Flavor", "Create")
+      }
+    </div>
+    <div class="card-body">
+      @if(Model.Count == 0)
+      {
+        <p>There are currently no flavors available.</p>
+      }
+      else
+      {
+        <ul>
+          @foreach(Flavor flavor in Model)
+          {
+            <li>@Html.ActionLink(flavor.Type, "Details", new { id = flavor.FlavorId })</li>
+          }
+        </ul>
+      }
+    </div>
   </div>
 </div>

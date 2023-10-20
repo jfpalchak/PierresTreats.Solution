@@ -4,10 +4,14 @@ a {
 }
 
 /* HEADER/NAV*/
+/* .head {
+  border-bottom: solid 1px black;
+} */
 
 .brand {
   text-align: center;
 }
+
 .logo {
   width: 200px;
 }
@@ -29,8 +33,38 @@ a {
   float:right;
 }
 
+/* SUBHEADER */
+body {
+  background-image: url("~/img/bars.jpg");
+  background-repeat: no-repeat;
+  background-position: center; 
+  position: relative;
+}
+
 /* CARDS */
 
+.account-header h6, .account-header h5 {
+  text-align: center;
+}
 .account-index {
   text-align: center;
+}
+
+.btn-x {
+  border: none;
+  font-weight: bold;
+}
+
+.login-footer, .register-footer {
+  text-align: center;
+}
+
+.login-btn, .register-btn {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.login-footer a, .register-footer a {
+  padding-left: 15px;
+  padding-right: 15px;
 }

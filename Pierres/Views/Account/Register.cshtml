@@ -13,7 +13,7 @@
   @using (Html.BeginForm())
   {
   <div class="card">
-    <div class="card-header">
+    <div class="account-header card-header">
       <h5>Register New User</h5>
     </div>
     <div class="card-body row">
@@ -41,9 +41,11 @@
         }
       </div>
     </div>
-    <div class="card-footer">
-      <input type="submit" value="Register" class="btn btn-primary" />
-      &nbsp;&nbsp;@Html.ActionLink("Back", "Index")
+    <div class="register-footer card-footer">
+      <input type="submit" value="Register" class="register-btn btn btn-primary" />
+      <br/>
+      @Html.ActionLink("Back", "Index")
+      @Html.ActionLink("Have an Account? Log In", "Login")
     </div>
   </div>
   }

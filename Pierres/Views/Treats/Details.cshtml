@@ -6,48 +6,50 @@
 @using Pierres.Models;
 @model Pierres.Models.Treat;
 
-<h4>Treat Details</h4>
+<h4>Pierre's Treats</h4>
 
 <br/>
 
-<div class="card">
-  <div class="card-header">
-    <h5>@Model.Type</h5>
-    @if(User.Identity.IsAuthenticated)
-    {
-      @Html.ActionLink("Add a Flavor", "AddFlavor", new { id = @Model.TreatId })
-      <br/>
-      <small>@Html.ActionLink("Edit Treat", "Edit", new { id = @Model.TreatId })</small> @:|
-      <small>@Html.ActionLink("Remove Treat", "Delete", new { id = @Model.TreatId })</small>
-    }
-  </div>
-  <div class="card-body">
-    @if(@Model.JoinEntities.Count == 0)
-    {
-      <p>This treat is void of any flavors.</p>
-    }
-    else
-    {
-      <h6>Flavors:</h6>
-      <ul>
-        @foreach(TreatFlavor join in Model.JoinEntities)
-        {
-          @using (Html.BeginForm("DeleteJoin", "Treats"))
+<div class="container col-8">
+  <div class="card">
+    <div class="card-header">
+      <h5>@Model.Type</h5>
+      @if(User.Identity.IsAuthenticated)
+      {
+        @Html.ActionLink("Add a Flavor", "AddFlavor", new { id = @Model.TreatId })
+        <br/>
+        <small>@Html.ActionLink("Edit Treat", "Edit", new { id = @Model.TreatId })</small> @:|
+        <small>@Html.ActionLink("Remove Treat", "Delete", new { id = @Model.TreatId })</small>
+      }
+    </div>
+    <div class="card-body">
+      @if(@Model.JoinEntities.Count == 0)
+      {
+        <p>This treat is void of any flavors.</p>
+      }
+      else
+      {
+        <h6>Flavors:</h6>
+        <ul>
+          @foreach(TreatFlavor join in Model.JoinEntities)
           {
-            <li>
-              @Html.ActionLink(join.Flavor.Type, "Details", "Flavors", new { id = join.FlavorId })
-              @Html.Hidden("joinId", @join.TreatFlavorId)
-              @if(User.Identity.IsAuthenticated)
-              {
-                <input type="submit" value="X" class="btn btn-x btn-sm btn-outline-danger" />
-              }
-            </li>
+            @using (Html.BeginForm("DeleteJoin", "Treats"))
+            {
+              <li>
+                @Html.ActionLink(join.Flavor.Type, "Details", "Flavors", new { id = join.FlavorId })
+                @Html.Hidden("joinId", @join.TreatFlavorId)
+                @if(User.Identity.IsAuthenticated)
+                {
+                  <input type="submit" value="X" class="btn btn-x btn-sm btn-outline-danger" />
+                }
+              </li>
+            }
           }
-        }
-      </ul>
-    }
-  </div>
-  <div class="card-footer">
-    @Html.ActionLink("Back to All Treats", "Index")
+        </ul>
+      }
+    </div>
+    <div class="card-footer">
+      @Html.ActionLink("Back to All Treats", "Index")
+    </div>
   </div>
 </div>

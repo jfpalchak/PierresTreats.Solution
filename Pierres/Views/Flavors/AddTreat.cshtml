@@ -4,27 +4,44 @@
 
 @model Pierres.Models.Flavor;
 
-<h4>Add a Treat</h4>
+<h4>Pierre's Flavors > Add Treat</h4>
 
 <br/>
 
-@if(ViewBag.IsNoTreats)
-{
-  <p>There are currently no treats available.</p>
-  <p>Please @Html.ActionLink("Create a Treat", "Create", "Treats") first.</p>
-}
-else
-{
-  @using (Html.BeginForm())
-  {
-    @Html.HiddenFor(m => m.FlavorId)
+<div class="container col-8">
+  <div class="card">
+    <div class="card-header">
+      <h4>@Model.Type</h4>
+      <h5>Assign a Treat</h5>
+    </div>
+    @if(ViewBag.IsNoTreats)
+    {
+      <div class="card-body">
+        <p>There are currently no treats available.</p>
+        <p>Please @Html.ActionLink("Create a Treat", "Create", "Treats") first.</p>
+      </div>
+      <div class="card-footer">
+        @Html.ActionLink("Cancel", "Details", new { id = @Model.FlavorId })
+      </div>
+    }
+    else
+    {
+      @using (Html.BeginForm())
+      {
+        <div class="card-body">
+          @Html.HiddenFor(m => m.FlavorId)
 
-    @Html.Label("Select a Treat")
-    <br/>
-    @Html.DropDownList("TreatId")
-    <br/>
-    <br/>
-    <input type="submit" value="Add" class="btn btn-primary" />
-    @Html.ActionLink("Cancel", "Details", new { id = @Model.FlavorId })
-  }
-}
+          @Html.Label("Select a Treat")
+          <br/>
+          @Html.DropDownList("TreatId")
+          <br/>
+          <br/>
+        </div>
+        <div class="card-footer">
+          <input type="submit" value="Add" class="btn btn-primary" />
+          &nbsp;&nbsp;@Html.ActionLink("Cancel", "Details", new { id = @Model.FlavorId })
+        </div>
+      }
+    }
+  </div>
+</div>

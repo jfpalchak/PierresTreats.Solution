@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center container">
+<div class="d-flex justify-content-center head">
   <nav class="header">
     <div class="row">
       <div class="col brand">
@@ -18,7 +18,8 @@
     </div>
   </nav>
 </div>
-<hr/>
+@* <hr/> *@
+<br/>
 <div class="nav-account">
   @Html.ActionLink((User.Identity.IsAuthenticated ? User.Identity.Name : ""), "Index", "Account")
 </div>
