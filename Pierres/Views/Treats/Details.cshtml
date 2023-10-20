@@ -29,7 +29,14 @@
       <ul>
         @foreach(TreatFlavor join in Model.JoinEntities)
         {
-          <li>@Html.ActionLink(join.Flavor.Type, "Details", new { id = join.Flavor.FlavorId })</li>
+          @using (Html.BeginForm("DeleteJoin", "Treats"))
+          {
+            <li>
+              @Html.ActionLink(join.Flavor.Type, "Details", "Flavors", new { id = join.FlavorId })
+              @Html.Hidden("joinId", @join.TreatFlavorId)
+              <input type="submit" value="X" class="btn btn-x btn-sm btn-outline-danger" />
+            </li>
+          }
         }
       </ul>
     }
