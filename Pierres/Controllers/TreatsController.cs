@@ -11,6 +11,7 @@ using System.Security.Claims;
 
 namespace Pierres.Controllers
 {
+  [Authorize]
   public class TreatsController : Controller
   {
     private readonly PierresContext _db;
@@ -22,6 +23,7 @@ namespace Pierres.Controllers
       _userManager = userManager;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       List<Treat> treats = _db.Treats.ToList();
@@ -48,6 +50,7 @@ namespace Pierres.Controllers
       }
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       Treat thisTreat = _db.Treats
@@ -100,7 +103,7 @@ namespace Pierres.Controllers
       List<Flavor> flavors = _db.Flavors.ToList();
       ViewBag.IsNoFlavors = (flavors.Count == 0) ? true : false;
       ViewBag.FlavorId = new SelectList(flavors, "FlavorId", "Type");
-      
+
       return View(thisTreat);
     }
 
