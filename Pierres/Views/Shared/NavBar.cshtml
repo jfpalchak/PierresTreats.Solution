@@ -13,9 +13,12 @@
         <br/>
         @Html.ActionLink("Flavors", "Index", "Flavors")
         <br/>
-        @Html.ActionLink((User.Identity.IsAuthenticated ? User.Identity.Name : "Account"), "Index", "Account")
+        @Html.ActionLink("Account", "Index", "Account")
       </div>
     </div>
   </nav>
 </div>
 <hr/>
+<div class="nav-account">
+  @Html.ActionLink((User.Identity.IsAuthenticated ? User.Identity.Name : ""), "Index", "Account")
+</div>

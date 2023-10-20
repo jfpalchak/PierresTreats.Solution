@@ -1,4 +1,7 @@
 /* GENERAL */
+a {
+  text-decoration:none;
+}
 
 /* HEADER/NAV*/
 
@@ -9,15 +12,25 @@
   width: 200px;
 }
 
-.navbar a {
-  text-decoration:none;
+.navbar a, .nav-account a{
+  font-weight: bold;
   margin-top: 10px;
   color: #590A29;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.navbar a:hover {
+.navbar a:hover, .nav-account a:hover {
   text-decoration: underline;
   text-decoration-color: #590A29;
+}
+
+.nav-account {
+  float:right;
+}
+
+/* CARDS */
+
+.account-index {
+  text-align: center;
 }
