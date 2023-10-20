@@ -1,15 +1,20 @@
 <div class="d-flex justify-content-center container">
-  <nav>
-    <div class="col logo">
-      <a asp-action="Index" asp-controller="Home">
+  <nav class="header">
+    <div class="row">
+      <div class="col brand">
         <img src="~/img/logo.png" class="logo">
-      </a>
+      </div>
     </div>
-    <div class="navbar">
-      @Html.ActionLink("Home", "Index", "Home") |
-      @Html.ActionLink("Treats", "Index", "Treats") |
-      @Html.ActionLink("Flavors", "Index", "Flavors") |
-      @Html.ActionLink((User.Identity.IsAuthenticated ? User.Identity.Name : "Account"), "Index", "Account")
+    <div class="row">
+      <div class="navbar">
+        @Html.ActionLink("Home", "Index", "Home")
+        <br/>
+        @Html.ActionLink("Treats", "Index", "Treats")
+        <br/>
+        @Html.ActionLink("Flavors", "Index", "Flavors")
+        <br/>
+        @Html.ActionLink((User.Identity.IsAuthenticated ? User.Identity.Name : "Account"), "Index", "Account")
+      </div>
     </div>
   </nav>
 </div>

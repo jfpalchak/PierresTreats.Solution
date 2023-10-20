@@ -4,3 +4,15 @@
 .logo {
   width: 200px;
 }
+
+
+.navbar a {
+  text-decoration:none;
+  margin-top: 10px;
+  color: #590A29;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  text-decoration-color: #590A29;
+}
