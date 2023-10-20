@@ -13,10 +13,10 @@
 <div class="card">
   <div class="card-header">
     <h5>@Model.Type</h5>
-    @Html.ActionLink("Add a Flavor", "AddFlavor")
+    @Html.ActionLink("Add a Flavor", "AddFlavor", new { id = @Model.TreatId })
     <br/>
-    <small>@Html.ActionLink("Edit Treat", "Edit")</small> |
-    <small>@Html.ActionLink("Remove Treat", "Delete")</small>
+    <small>@Html.ActionLink("Edit Treat", "Edit", new { id = @Model.TreatId })</small> |
+    <small>@Html.ActionLink("Remove Treat", "Delete", new { id = @Model.TreatId })</small>
   </div>
   <div class="card-body">
     @if(@Model.JoinEntities.Count == 0)

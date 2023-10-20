@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Pierres.Models;
+@model Pierres.Models.Treat;
+
+<h4>Remove Treat</h4>
+
+<br/>
+
+<div class="card">
+  <div class="card-header">
+    <h5>Treat: @Model.Type</h5>
+  </div>
+  <div class="card-body">
+    <h5>Are you sure you want to delete this?</h5>
+  </div>
+  <div class="card-footer">
+    @using (Html.BeginForm())
+    {
+      <input type="submit" value="Delete" class="btn btn-danger" />
+      @Html.ActionLink("Cancel", "Details", new { id = @Model.TreatId })
+    }
+  </div>
+</div>
