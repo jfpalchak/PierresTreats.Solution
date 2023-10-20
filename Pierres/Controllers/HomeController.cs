@@ -21,7 +21,14 @@ namespace Pierres.Controllers
 
     public ActionResult Index()
     {
-      return View();
+      Dictionary<string, object[]> model = new Dictionary<string, object[]>();
+      Treat[] treats = _db.Treats.ToArray();
+      Flavor[] flavors = _db.Flavors.ToArray();
+
+      model.Add("treats", treats);
+      model.Add("flavors", flavors);
+
+      return View(model);
     }
   }
 }

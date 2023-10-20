@@ -2,6 +2,8 @@
   Layout = "_Layout";
 }
 
+@using Pierres.Models;
+
 <h4>Welcome to Pierre's Sweet & Savory Treats!</h4>
 
 <br/>
@@ -13,7 +15,19 @@
         <h5>Treats</h5>
       </div>
       <div class="card-body">
-        TREATS GO HERE
+        @if(Model["treats"].Length == 0)
+        {
+          <p>There are currently no treats available.</p>
+        }
+        else
+        {
+          <ul>
+            @foreach(Treat treat in Model["treats"])
+            {
+              <li>@Html.ActionLink(treat.Type, "Details", "Treats", new { id = treat.TreatId })</li>
+            }
+          </ul>
+        }
       </div>
     </div>
   </div>
@@ -23,7 +37,19 @@
         <h5>Flavors</h5>
       </div>
       <div class="card-body">
-        FLAVORS GO HERE
+        @if(Model["flavors"].Length == 0)
+        {
+          <p>There are currently no flavors available.</p>
+        }
+        else
+        {
+          <ul>
+            @foreach(Flavor flavor in Model["flavors"])
+            {
+              <li>@Html.ActionLink(flavor.Type, "Details", "Flavors", new { id = flavor.FlavorId })</li>
+            }
+          </ul>
+        }
       </div>
     </div>
   </div>
