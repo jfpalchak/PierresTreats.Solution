@@ -10,7 +10,7 @@
 
 <div class="row">
   <div class="col">
-    <div class="card">
+    <div class="splash card">
       <div class="card-header">
         <h5>Treats</h5>
       </div>
@@ -36,7 +36,7 @@
     </div>
   </div>
   <div class="col">
-    <div class="card">
+    <div class="splash card">
       <div class="card-header">
         <h5>Flavors</h5>
       </div>
@@ -46,7 +46,7 @@
           <p>There are currently no flavors available.</p>
           @if(User.Identity.IsAuthenticated)
           {
-            @Html.ActionLink("Add a Flavor", "Create", "Flavor")
+            @Html.ActionLink("Add a Flavor", "Create", "Flavors")
           }
         }
         else

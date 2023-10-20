@@ -4,9 +4,6 @@ a {
 }
 
 /* HEADER/NAV*/
-/* .head {
-  border-bottom: solid 1px black;
-} */
 
 .brand {
   text-align: center;
@@ -34,18 +31,19 @@ a {
 }
 
 /* SUBHEADER */
-body {
+/* body {
   background-image: url("~/img/bars.jpg");
   background-repeat: no-repeat;
   background-position: center; 
   position: relative;
-}
+} */
 
 /* CARDS */
 
-.account-header h6, .account-header h5 {
+.splash .card-header, .account-header h6, .account-header h5 {
   text-align: center;
 }
+
 .account-index {
   text-align: center;
 }
@@ -67,4 +65,8 @@ body {
 .login-footer a, .register-footer a {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.splash .card-body {
+  text-align: center;
 }

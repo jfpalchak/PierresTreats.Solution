@@ -8,13 +8,25 @@
 
 <br/>
 
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(m => m.Type)
-  <br/>
-  @Html.TextBoxFor(m => m.Type)
-  <br/>
-  @Html.ValidationMessageFor(m => m.Type, "", new { @class = "text-danger" })
-  <br/>
-  <input type="submit" value="Add" class="btn btn-primary" />
-}
+<div class="container col-8">
+  @using (Html.BeginForm())
+  {
+    <div class="card">
+      <div class="card-header">
+        <h5>Add New Treat</h5>
+      </div>
+      <div class="card-body">
+        @Html.LabelFor(m => m.Type)
+        <br/>
+        @Html.TextBoxFor(m => m.Type)
+        @Html.ValidationMessageFor(m => m.Type, "", new { @class = "text-danger" })
+        <br/>
+        <br/>
+      </div>
+      <div class="card-footer">
+        <input type="submit" value="Add" class="btn btn-primary" />
+        &nbsp;&nbsp;@Html.ActionLink("Back", "Index")
+      </div>
+    </div>
+  }
+</div>
