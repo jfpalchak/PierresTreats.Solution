@@ -12,7 +12,7 @@
   @Html.ValidationSummary("Please fix the following error(s) and resubmit:")
 }
 
-@using (Html.BeginForm)
+@using (Html.BeginForm())
 {
   @Html.LabelFor(user => user.Email)
   @Html.TextBoxFor(user => user.Email)

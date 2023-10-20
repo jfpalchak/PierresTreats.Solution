@@ -2,3 +2,26 @@
   Layout = "_Layout";
 }
 
+@using Pierres.ViewModels;
+@model LoginViewModel;
+
+<h4>Log In to Account</h4>
+
+@if(!ViewData.ModelState.IsValid)
+{
+  @Html.ValidationSummary("Please fix the following error(s) and resubmit:")
+}
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(user => user.Email)
+  @Html.TextBoxFor(user => user.Email)
+  <br/>
+  @Html.LabelFor(user => user.Password)
+  @Html.EditorFor(user => user.Password)
+  <br/>
+  <input type="submit" value="Log In" class="btn btn-primary" />
+}
+
+@Html.ActionLink("Back", "Index")
+@Html.ActionLink("Register an Account", "Register")

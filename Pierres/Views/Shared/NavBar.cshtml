@@ -3,6 +3,6 @@
   @Html.ActionLink("Home", "Index", "Home") |
   @Html.ActionLink("Treats", "Index", "Treats") |
   @Html.ActionLink("Flavors", "Index", "Flavors") |
-  @Html.ActionLink("Account", "Index", "Account")
+  @Html.ActionLink((User.Identity.IsAuthenticated ? User.Identity.Name : "Account"), "Index", "Account")
 </nav>
 <hr/>
