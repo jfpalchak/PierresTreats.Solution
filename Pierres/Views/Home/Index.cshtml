@@ -3,9 +3,9 @@
 }
 
 @using Pierres.Models;
-
-<h4>Welcome to Pierre's Sweet & Savory Treats!</h4>
-
+<div class="subheader bg">
+  <h4>Welcome to Pierre's Sweet & Savory Treats!</h4>
+</div>
 <br/>
 
 <div class="row">
@@ -18,6 +18,10 @@
         @if(Model["treats"].Length == 0)
         {
           <p>There are currently no treats available.</p>
+          @if(User.Identity.IsAuthenticated)
+          {
+            @Html.ActionLink("Add a Treat", "Create", "Treats")
+          }
         }
         else
         {
@@ -40,6 +44,10 @@
         @if(Model["flavors"].Length == 0)
         {
           <p>There are currently no flavors available.</p>
+          @if(User.Identity.IsAuthenticated)
+          {
+            @Html.ActionLink("Add a Flavor", "Create", "Flavor")
+          }
         }
         else
         {
@@ -54,3 +62,20 @@
     </div>
   </div>
 </div>
+
+@if((Model["treats"].Length == 0) && (Model["flavors"].Length == 0) && !User.Identity.IsAuthenticated)
+{
+  <br/>
+  <div class="row justify-content-center">
+    <div class="card col-5 container">
+      <div class="card-body">
+        <h5></h5>
+        <h6>
+          To add new items, 
+          @Html.ActionLink("Sign In", "Login", "Account") or
+          @Html.ActionLink("Register a New Account", "Register", "Account")!
+        </h6>
+      </div>
+    </div>
+  </div>
+}
