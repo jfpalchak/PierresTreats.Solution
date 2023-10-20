@@ -23,7 +23,7 @@ Any user, whether they have registered an account or not, is able to navigate th
 
 To create, update, or delete objects in the web application, a user can take the following steps:
   1. Navigate to _Account_, found in the site's navigation bar.
-  2. Select _Register Account_.
+  2. Select _Register_.
   3. Follow the site's instructions by entering an email and password to register an account with.
   4. Once an account has been successfully registered and the user has been redirected back to the _Account_ page, select _Log In_.
   5. Enter the same credentials that were previously used to create the newly registered account.
