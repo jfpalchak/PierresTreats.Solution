@@ -25,7 +25,7 @@
         }
         else
         {
-          <ul>
+          <ul class="splash-list">
             @foreach(Treat treat in Model["treats"])
             {
               <li>@Html.ActionLink(treat.Type, "Details", "Treats", new { id = treat.TreatId })</li>
@@ -51,7 +51,7 @@
         }
         else
         {
-          <ul>
+          <ul class="splash-list">
             @foreach(Flavor flavor in Model["flavors"])
             {
               <li>@Html.ActionLink(flavor.Type, "Details", "Flavors", new { id = flavor.FlavorId })</li>

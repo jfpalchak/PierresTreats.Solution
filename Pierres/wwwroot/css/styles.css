@@ -72,3 +72,7 @@ a {
 .splash .card-body {
   text-align: center;
 }
+
+.splash-list {
+  text-align: start;
+}
