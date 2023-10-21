@@ -7,6 +7,7 @@
     </div>
     <div class="row">
       <div class="col-12 navbar">
+        <img class="flag" src="~/img/flag.png" alt="pink flag">
         @Html.ActionLink("Home", "Index", "Home")
         <br/>
         @Html.ActionLink("Treats", "Index", "Treats")
@@ -14,12 +15,9 @@
         @Html.ActionLink("Flavors", "Index", "Flavors")
         <br/>
         @Html.ActionLink("Account", "Index", "Account")
+        <img class="flag" src="~/img/flag.png" alt="pink flag">
       </div>
     </div>
   </nav>
 </div>
-@* <hr/> *@
 <br/>
-<div class="nav-account">
-  @Html.ActionLink((User.Identity.IsAuthenticated ? User.Identity.Name : ""), "Index", "Account")
-</div>

@@ -5,8 +5,9 @@
 @using Pierres.ViewModels;
 @model RegisterViewModel;
 
-<h4>Account Management</h4>
-
+<div class="subheader bg">
+  <h4>Account Management</h4>
+</div>
 <br/>
 
 <div class="container col-7">
@@ -19,7 +20,6 @@
     <div class="card-body row">
       <div class="col">
         <h5>Enter account details:</h5>
-        <br/>
         @Html.LabelFor(user => user.Email)
         <br/>
         @Html.TextBoxFor(user => user.Email)
@@ -49,4 +49,5 @@
     </div>
   </div>
   }
+  <br/>
 </div>

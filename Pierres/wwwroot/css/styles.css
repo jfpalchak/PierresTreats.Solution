@@ -3,6 +3,10 @@ a {
   text-decoration:none;
 }
 
+body {
+  background-color: rgb(255, 253, 253);
+}
+
 /* HEADER/NAV*/
 
 .brand {
@@ -33,12 +37,17 @@ a {
 }
 
 /* SUBHEADER */
-/* body {
-  background-image: url("~/img/bars.jpg");
-  background-repeat: no-repeat;
-  background-position: center; 
-  position: relative;
-} */
+
+.subheader {
+  text-align: center;
+  color: #590A29;
+}
+
+.flag {
+  width: 200px;
+  height: 25px;
+  margin-top: 10px;
+}
 
 /* CARDS */
 
@@ -75,4 +84,21 @@ a {
 
 .splash-list {
   text-align: start;
+}
+
+/* FOOTER */
+#footer {
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  color:#CCC;
+  padding:5px;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 770px) {
+  .flag {
+    display: none;
+  }
 }

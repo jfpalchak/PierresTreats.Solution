@@ -5,8 +5,9 @@
 @using Pierres.ViewModels;
 @model LoginViewModel;
 
-<h4>Account Management</h4>
-
+<div class="subheader bg">
+  <h4>Account Management</h4>
+</div>
 <br/>
 
 <div class="container col-7">
@@ -19,7 +20,7 @@
     </div>
     <div class="card-body row">
       <div class="col ">
-        <h5>Enter account details:</h5>
+        <h5>Enter user credentials:</h5>
         <br/>
         @Html.LabelFor(user => user.Email)
         <br/>
@@ -46,4 +47,5 @@
     </div>
   </div>
   }
+  <br/>
 </div>

@@ -5,8 +5,9 @@
 @using Pierres.Models;
 @model Pierres.Models.Flavor;
 
-<h4>Pierre's Flavors > Edit</h4>
-
+<div class="subheader bg">
+  <h4>Pierre's Flavors > Edit</h4>
+</div>
 <br/>
 
 <div class="container col-8">
@@ -15,7 +16,7 @@
     <div class="card">
       <div class="card-header">
         <h4>@Model.Type</h4>
-        <h6>Edit Flavor</h6>
+        <h6>Edit Flavor Details</h6>
       </div>
       <div class="card-body">
         @Html.HiddenFor(m => m.FlavorId)
