@@ -21,6 +21,8 @@ _Pierre's Sweet and Savory Treats_ is an MVC web application that allows authent
 
 Any user, whether they have registered an account or not, is able to navigate the site to read all available entries for Treats and Flavors. However, unless the user registers and logs in to their own account through the site's interface, the user will not be able to create, update, or delete any objects in the application.
 
+<img src="https://github.com/jfpalchak/PierresTreats.Solution/blob/main/Pierres/wwwroot/img/splash.png" alt="Pierre's splash page"/>
+
 To create, update, or delete objects in the web application, a user can take the following steps:
   1. Navigate to _Account_, found in the site's navigation bar.
   2. Select _Register_.
@@ -28,6 +30,8 @@ To create, update, or delete objects in the web application, a user can take the
   4. Once an account has been successfully registered and the user has been redirected back to the _Account_ page, select _Log In_.
   5. Enter the same credentials that were previously used to create the newly registered account.
   6. Once successfully logged in, the user will now have access to create, update, and delete functionality throughout the site.
+
+<img src="https://github.com/jfpalchak/PierresTreats.Solution/blob/main/Pierres/wwwroot/img/login.png" alt="Pierre's login page"/>
 
 ## Setup/Installation Requirements
 
