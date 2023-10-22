@@ -29,7 +29,10 @@
       <div class="card-body">
         @if(ViewBag.Confirmation == true)
         {
-          <h5 class="confirmation">Registration Successful! Please log in.</h5>
+          <h5 class="confirmation">
+            Registration Successful!
+            @Html.ActionLink("X", "Index")
+          </h5>
         }
         <h5>@Html.ActionLink("Log In", "Login")</h5>
         <h5>@Html.ActionLink("Register", "Register")</h5>

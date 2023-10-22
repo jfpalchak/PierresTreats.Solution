@@ -93,6 +93,18 @@ body {
   border-radius: 8px;
 }
 
+.confirmation a {
+  text-decoration: none;
+  color: rgb(232, 101, 132);
+  padding-top: 5px;
+  float: right;
+  font-size: small;
+}
+
+.confirmation a:hover {
+  color: rgb(216, 75, 108);
+}
+
 /* FOOTER */
 #footer {
   position:fixed;
@@ -107,5 +119,12 @@ body {
 @media screen and (max-width: 770px) {
   .flag {
     display: none;
+  }
+
+  .confirmation a {
+    width: 80%;
+    float: none;
+    display: inline-block;
+    /* text-align: center; */
   }
 }
