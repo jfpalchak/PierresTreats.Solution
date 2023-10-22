@@ -5,6 +5,7 @@ using Pierres.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Pierres.Controllers
 {
@@ -44,7 +45,8 @@ namespace Pierres.Controllers
         IdentityResult result = await _userManager.CreateAsync(user, model.Password);
         if (result.Succeeded)
         {
-          return RedirectToAction("Index");
+          ViewBag.Confirmation = true;
+          return View("Index");
         }
         else
         {

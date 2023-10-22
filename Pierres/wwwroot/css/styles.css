@@ -86,6 +86,13 @@ body {
   text-align: start;
 }
 
+.confirmation {
+  color: rgb(232, 101, 132);
+  padding: 15px;
+  background-color: rgba(232, 101, 132, 0.115);
+  border-radius: 8px;
+}
+
 /* FOOTER */
 #footer {
   position:fixed;
